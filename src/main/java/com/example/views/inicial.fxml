@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.TilePane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@../DALL·E%202024-12-11%2008.40.40%20-%20A%20simple,%20minimalistic%20background%20for%20a%20library%20website.%20The%20design%20features%20abstract,%20flat-style%20illustrations%20of%20books%20and%20shelves%20in%20soft,%20muted%20pa.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="34.0" layoutY="75.0" prefHeight="311.0" prefWidth="243.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <TilePane layoutX="39.0" layoutY="30.0" prefHeight="268.0" prefWidth="193.0">
+               <children>
+                  <ImageView fx:id="image1" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin></ImageView>
+                  <ImageView fx:id="image2" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin>
+                  </ImageView>
+                  <ImageView fx:id="image3" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin>
+                  </ImageView>
+                  <ImageView fx:id="image4" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin>
+                  </ImageView>
+                  <ImageView fx:id="image5" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin>
+                  </ImageView>
+                  <ImageView fx:id="image6" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                     <TilePane.margin>
+                        <Insets bottom="20.0" right="20.0" />
+                     </TilePane.margin>
+                  </ImageView>
+               </children>
+            </TilePane>
+            <Label layoutX="14.0" layoutY="5.0" text="Sugestões">
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TextField fx:id="field1" layoutX="43.0" layoutY="32.0" onAction="#handleSearch" prefHeight="25.0" prefWidth="226.0" style="-fx-background-radius: 20px; -fx-font: grey;" text="Pesquisar" />
+      <AnchorPane layoutX="300.0" layoutY="31.0" prefHeight="355.0" prefWidth="273.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
+         <children>
+            <ImageView fitHeight="114.0" fitWidth="114.0" layoutX="80.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Documents/Trabalho%20Web/img/5987462.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="textNome" layoutX="133.0" layoutY="148.0" prefHeight="17.0" prefWidth="0.0" />
+            <Label layoutX="41.0" layoutY="179.0" />
+            <Hyperlink fx:id="verEmprestimos" layoutX="51.0" layoutY="208.0" text="Ver emprestimos" />
+            <Hyperlink fx:id="editarConta" layoutX="51.0" layoutY="231.0" text="Editar conta" />
+         </children>
+      </AnchorPane>
+   </children>
+</Pane>
