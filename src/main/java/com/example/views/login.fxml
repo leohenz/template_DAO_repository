@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Hyperlink?>
 <?import javafx.scene.control.TextField?>
@@ -10,7 +15,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.loginController">
    <children>
       <ImageView fx:id="image" fitHeight="400.0" fitWidth="600.0">
          <image>
@@ -23,13 +28,13 @@
             <TextField fx:id="field2" layoutX="36.0" layoutY="129.0" />
             <Text layoutX="36.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
             <Text layoutX="36.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-            <Button fx:id="botton1" layoutX="36.0" layoutY="183.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: grey;" text="Login" textFill="WHITE" />
-            <Hyperlink fx:id="botton2" layoutX="36.0" layoutY="219.0" prefHeight="2.0" prefWidth="119.0" text="Esqueci minha senha">
+            <Button fx:id="botton1" layoutX="36.0" layoutY="183.0" mnemonicParsing="false" onAction="#login" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: grey;" text="Login" textFill="WHITE" />
+            <Hyperlink fx:id="botton2" layoutX="36.0" layoutY="219.0" onAction="#recuperaSenha" prefHeight="2.0" prefWidth="119.0" text="Esqueci minha senha">
                <font>
                   <Font size="11.0" />
                </font>
             </Hyperlink>
-            <Hyperlink fx:id="botton3" layoutX="36.0" layoutY="241.0" prefHeight="2.0" prefWidth="119.0" text="Criar conta">
+            <Hyperlink fx:id="botton3" layoutX="36.0" layoutY="241.0" onAction="#cadastro" prefHeight="2.0" prefWidth="119.0" text="Criar conta">
                <font>
                   <Font size="11.0" />
                </font>
