@@ -1,81 +1,72 @@
 package com.example.controller;
 
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import com.example.App;
-import com.example.banco.conexaoBanco;
-
+import com.example.dao.PessoaDAO;
+import com.example.dao.PessoaDAOImpl;
+import com.example.model.Pessoa;
+import com.example.model.UsuarioComum;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
+import javafx.scene.control.Hyperlink;
 import javafx.scene.control.TextField;
+import java.io.IOException;
 
 public class cadastroController {
 
     @FXML
-    private Button botton1;
+    private Hyperlink linkVoltar;
 
     @FXML
-    private TextField field1;
+    private TextField campoEmail;
 
     @FXML
-    private TextField field2;
+    private TextField campoNome;
 
     @FXML
-    private TextField field3;
+    private TextField campoSenha;
+
+    @FXML
+    private Button botaoCriarConta;
+
+    private PessoaDAO pessoaDAO;
+
+    public cadastroController() {
+        this.pessoaDAO = new PessoaDAOImpl();
+    }
 
     @FXML
     private void initialize() {
-        botton1.setDisable(true);
+        botaoCriarConta.setDisable(true);
 
-        field1.textProperty().addListener((observable, oldValue, newValue) -> checkFields());
-        field2.textProperty().addListener((observable, oldValue, newValue) -> checkFields());
-        field3.textProperty().addListener((observable, oldValue, newValue) -> checkFields());
+        campoNome.textProperty().addListener((observable, oldValue, newValue) -> verificarCampos());
+        campoEmail.textProperty().addListener((observable, oldValue, newValue) -> verificarCampos());
+        campoSenha.textProperty().addListener((observable, oldValue, newValue) -> verificarCampos());
     }
 
-    private void checkFields() {
-        boolean allFilled = !field1.getText().isEmpty() && !field2.getText().isEmpty() && !field3.getText().isEmpty();
-        botton1.setDisable(!allFilled);
+    private void verificarCampos() {
+        boolean todosPreenchidos = !campoNome.getText().isEmpty() && !campoEmail.getText().isEmpty()
+                && !campoSenha.getText().isEmpty();
+        botaoCriarConta.setDisable(!todosPreenchidos);
     }
 
     @FXML
     private void criarConta() throws IOException {
-        String nome = field1.getText();
-        String email = field2.getText();
-        String senha = field3.getText();
+        String nome = campoNome.getText();
+        String email = campoEmail.getText();
+        String senha = campoSenha.getText();
+        Pessoa novoUsuario = new UsuarioComum(nome, email, senha, "comum");
+        boolean registrado = pessoaDAO.registrarUsuario(novoUsuario);
 
-        if (registrarUsuario(nome, email, senha)) {
-            // Registro bem-sucedido, redirecionar para a tela de login
+        if (registrado) {
+            System.out.println("Usuário cadastrado com sucesso!");
             App.setRoot("login");
         } else {
-            // Exibir mensagem de erro
-            System.out.println("Erro ao criar conta. Tente novamente.");
-        }
-    }
-
-    private boolean registrarUsuario(String nome, String email, String senha) {
-        String query = "INSERT INTO BD_usuario (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, 'comum')";
-
-        try (Connection connection = conexaoBanco.getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(query)) {
-            
-            preparedStatement.setString(1, nome);
-            preparedStatement.setString(2, email);
-            preparedStatement.setString(3, senha);
-
-            int result = preparedStatement.executeUpdate();
-            return result > 0; // Retorna true se a inserção foi bem-sucedida
-
-        } catch (SQLException e) {
-            e.printStackTrace();
-            return false;
+            System.out.println("Erro ao cadastrar usuário.");
         }
     }
 
     @FXML
-    private void voltarLogin() throws IOException {
+    private void voltarParaLogin() throws IOException {
         App.setRoot("login");
     }
 }

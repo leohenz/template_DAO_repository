@@ -1,69 +1,54 @@
 package com.example.controller;
-import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-
-import com.example.App;
-import com.example.banco.conexaoBanco;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.event.ActionEvent;
+import com.example.App;
+import com.example.model.Pessoa;
+import com.example.controller.loginController;
 
 public class inicialController {
-
     @FXML
-    private ImageView image5;
-
+    private ImageView imagem1;
     @FXML
-    private ImageView image6;
-
+    private ImageView imagem2;
     @FXML
-    private ImageView image3;
-
+    private ImageView imagem3;
     @FXML
-    private TextField field1;
-
+    private ImageView imagem4;
     @FXML
-    private ImageView image4;
-
+    private ImageView imagem5;
     @FXML
-    private Hyperlink buttonEmprestimo;
-
+    private ImageView imagem6;
     @FXML
-    private Hyperlink buttonEditarConta;
-
+    private TextField campoBusca;
     @FXML
-    private ImageView image1;
-
+    private Hyperlink linkEmprestimo;
     @FXML
-    private ImageView image2;
-
+    private Hyperlink linkEditarConta;
     @FXML
-    private Label textNome;
+    private Label nomeLabel;
 
     @FXML
     private void initialize() {
-
-    }
-    
-    @FXML
-    private void Search() throws IOException {
-        App.setRoot("inicial");
+        nomeLabel.setText("Bem-vindo, " + loginController.getUsuarioLogado().getNome());
     }
 
     @FXML
-    private void verEmprestimos() throws IOException {
-        App.setRoot("inicial");
+    private void buscar(ActionEvent event) {
+        // Implementação da ação de pesquisa
     }
 
     @FXML
-    private void editarConta() throws IOException {
-        App.setRoot("inicial");
+    private void verEmprestimos(ActionEvent event) {
+        // Implementação da ação de ver empréstimos
+    }
+
+    @FXML
+    private void editarConta(ActionEvent event) {
+        // Implementação da ação de editar conta
     }
 }

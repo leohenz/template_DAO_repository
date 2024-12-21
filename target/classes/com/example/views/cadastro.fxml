@@ -22,14 +22,14 @@
       </ImageView>
       <AnchorPane layoutX="47.0" layoutY="39.0" prefHeight="311.0" prefWidth="226.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <TextField fx:id="field1" layoutX="36.0" layoutY="71.0" />
-            <TextField fx:id="field2" layoutX="36.0" layoutY="129.0" />
+            <TextField fx:id="campoNome" layoutX="36.0" layoutY="71.0" />
+            <TextField fx:id="campoEmail" layoutX="36.0" layoutY="129.0" />
             <Text layoutX="36.0" layoutY="57.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Nome" />
             <Text layoutX="36.0" layoutY="117.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email" />
-            <TextField fx:id="field3" layoutX="36.0" layoutY="186.0" />
+            <TextField fx:id="campoSenha" layoutX="36.0" layoutY="186.0" />
             <Text layoutX="36.0" layoutY="175.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Senha" />
-            <Button fx:id="botton1" layoutX="36.0" layoutY="243.0" mnemonicParsing="false" onAction="#criarConta" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: grey;" text="Criar conta" textFill="WHITE" />
-            <Hyperlink fx:id="button2" layoutX="35.0" layoutY="274.0" onAction="#voltarLogin" text="Voltar" />
+            <Button fx:id="botaoCriarConta" layoutX="36.0" layoutY="243.0" mnemonicParsing="false" onAction="#criarConta" prefHeight="25.0" prefWidth="149.0" style="-fx-background-color: grey;" text="Criar conta" textFill="WHITE" />
+            <Hyperlink fx:id="linkVoltar" layoutX="35.0" layoutY="274.0" onAction="#voltarParaLogin" text="Voltar" />
          </children>
       </AnchorPane>
    </children>

@@ -28,31 +28,31 @@
          <children>
             <TilePane layoutX="39.0" layoutY="30.0" prefHeight="268.0" prefWidth="193.0" style="visibility: 999;">
                <children>
-                  <ImageView fx:id="image1" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem1" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin></ImageView>
-                  <ImageView fx:id="image2" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem2" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin>
                   </ImageView>
-                  <ImageView fx:id="image3" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem3" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin>
                   </ImageView>
-                  <ImageView fx:id="image4" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem4" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin>
                   </ImageView>
-                  <ImageView fx:id="image5" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem5" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin>
                   </ImageView>
-                  <ImageView fx:id="image6" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="imagem6" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
                      <TilePane.margin>
                         <Insets bottom="20.0" right="20.0" />
                      </TilePane.margin>
@@ -66,18 +66,21 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextField fx:id="field1" layoutX="43.0" layoutY="32.0" onAction="#Search" prefHeight="25.0" prefWidth="226.0" style="-fx-background-radius: 20px; -fx-font: grey;" text="Pesquisar" />
+      <TextField fx:id="campoPesquisa" layoutX="43.0" layoutY="32.0" onAction="#buscar" prefHeight="25.0" prefWidth="226.0" style="-fx-background-radius: 20px; -fx-font: grey;" />
       <AnchorPane layoutX="300.0" layoutY="31.0" prefHeight="355.0" prefWidth="273.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <Label fx:id="textNome" layoutX="133.0" layoutY="148.0" prefHeight="17.0" prefWidth="0.0" />
-            <Label layoutX="41.0" layoutY="179.0" />
-            <Hyperlink fx:id="buttonEmprestimo" layoutX="51.0" layoutY="208.0" onAction="#verEmprestimos" text="Ver emprestimos" />
-            <Hyperlink fx:id="buttonEditarConta" layoutX="51.0" layoutY="231.0" onAction="#editarConta" text="Editar conta" />
+            <Hyperlink fx:id="linkEmprestimos" layoutX="41.0" layoutY="209.0" onAction="#verEmprestimos" text="Ver empréstimos" />
+            <Hyperlink fx:id="linkEditarConta" layoutX="40.0" layoutY="238.0" onAction="#editarConta" text="Editar conta" />
             <ImageView fitHeight="104.0" fitWidth="104.0" layoutX="85.0" layoutY="14.0">
                <image>
                   <Image url="@/images/5987462.png" />
                </image>
             </ImageView>
+            <Label fx:id="nomeLabel" alignment="TOP_CENTER" layoutX="40.0" layoutY="153.0" prefHeight="49.0" prefWidth="200.0" wrapText="true">
+               <font>
+                  <Font name="Arial Black" size="15.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
    </children>
