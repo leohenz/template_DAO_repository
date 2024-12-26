@@ -55,6 +55,7 @@ public class PessoaDAOImpl implements PessoaDAO {
     }
 
     @Override
+
     public boolean registrarUsuario(Pessoa pessoa) {
         String consulta = "INSERT INTO BD_usuario (nome, email, senha, tipo_usuario) VALUES (?, ?, ?, ?)";
 
@@ -64,6 +65,7 @@ public class PessoaDAOImpl implements PessoaDAO {
             comandoSQL.setString(1, pessoa.getNome());
             comandoSQL.setString(2, pessoa.getEmail());
             comandoSQL.setString(3, pessoa.getSenha());
+
             comandoSQL.setString(4, pessoa.getTipoUsuario()); // Usar o tipo de usuário da pessoa
 
             int resultado = comandoSQL.executeUpdate();

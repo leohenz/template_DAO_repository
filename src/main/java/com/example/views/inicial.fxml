@@ -19,58 +19,67 @@
 
 <Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.controller.inicialController">
    <children>
+      <!-- Imagem de fundo -->
       <ImageView fitHeight="400.0" fitWidth="600.0">
          <image>
             <Image url="@/images/ilikemen.png" />
          </image>
       </ImageView>
+      
+      <!-- Cartão de sugestões -->
       <AnchorPane layoutX="34.0" layoutY="75.0" prefHeight="311.0" prefWidth="243.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <TilePane layoutX="39.0" layoutY="30.0" prefHeight="268.0" prefWidth="193.0" style="visibility: 999;">
-               <children>
-                  <ImageView fx:id="imagem1" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin></ImageView>
-                  <ImageView fx:id="imagem2" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin>
-                  </ImageView>
-                  <ImageView fx:id="imagem3" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin>
-                  </ImageView>
-                  <ImageView fx:id="imagem4" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin>
-                  </ImageView>
-                  <ImageView fx:id="imagem5" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin>
-                  </ImageView>
-                  <ImageView fx:id="imagem6" fitHeight="71.0" fitWidth="71.0" pickOnBounds="true" preserveRatio="true">
-                     <TilePane.margin>
-                        <Insets bottom="20.0" right="20.0" />
-                     </TilePane.margin>
-                  </ImageView>
-               </children>
-            </TilePane>
-            <Label layoutX="14.0" layoutY="5.0" text="Sugestões">
+            <Label layoutX="18.0" layoutY="18.0" text="Sugestões">
                <font>
-                  <Font size="16.0" />
+                  <Font size="20.0" />
                </font>
             </Label>
+            <Hyperlink fx:id="linkEmprestimos1" layoutX="24.0" layoutY="222.0" onAction="#verEmprestimos" prefHeight="17.0" prefWidth="135.0" text="Ver todos os livros">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Hyperlink>
+            <ImageView fx:id="imagemLivro1" fitHeight="96.0" fitWidth="133.0" layoutX="40.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/50tonsdecinza.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="textoLivro1" alignment="TOP_CENTER" layoutX="42.0" layoutY="170.0" prefHeight="45.0" prefWidth="75.0" text="Cinquenta Tons De Cinza" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <ImageView fx:id="imagemLivro2" fitHeight="96.0" fitWidth="133.0" layoutX="122.0" layoutY="72.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@/images/50tonsdecinza.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="textoLivro2" alignment="TOP_CENTER" layoutX="124.0" layoutY="170.0" prefHeight="47.0" prefWidth="74.0" text="Cinquenta Tons De Cinza" textAlignment="CENTER" wrapText="true">
+               <font>
+                  <Font size="8.0" />
+               </font>
+            </Label>
+            <Button fx:id="botaoLivro2" layoutX="122.0" layoutY="72.0" mnemonicParsing="false" onAction="#irParaLivro" prefHeight="121.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
+            <Button fx:id="botaoLivro1" layoutX="40.0" layoutY="73.0" mnemonicParsing="false" onAction="#irParaLivro" prefHeight="120.0" prefWidth="78.0" style="-fx-background-color: transparent;" />
          </children>
       </AnchorPane>
-      <TextField fx:id="campoPesquisa" layoutX="43.0" layoutY="32.0" onAction="#buscar" prefHeight="25.0" prefWidth="226.0" style="-fx-background-radius: 20px; -fx-font: grey;" />
+      
+      <!-- Campo de pesquisa -->
+      <TextField fx:id="campoPesquisa" layoutX="43.0" layoutY="32.0" onAction="#buscar" prefHeight="25.0" prefWidth="226.0" style="-fx-background-radius: 20px;" />
+      
+      <!-- Cartão de informações -->
       <AnchorPane layoutX="300.0" layoutY="31.0" prefHeight="355.0" prefWidth="273.0" style="-fx-background-color: white; -fx-background-radius: 20px;">
          <children>
-            <Hyperlink fx:id="linkEmprestimos" layoutX="41.0" layoutY="209.0" onAction="#verEmprestimos" text="Ver empréstimos" />
-            <Hyperlink fx:id="linkEditarConta" layoutX="40.0" layoutY="238.0" onAction="#editarConta" text="Editar conta" />
+            <Hyperlink fx:id="linkEmprestimos" layoutX="41.0" layoutY="209.0" onAction="#verEmprestimos" text="Ver empréstimos">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Hyperlink>
+            <Hyperlink fx:id="linkEditarConta" layoutX="40.0" layoutY="238.0" onAction="#editarConta" text="Editar conta">
+               <font>
+                  <Font size="12.0" />
+               </font>
+            </Hyperlink>
             <ImageView fitHeight="104.0" fitWidth="104.0" layoutX="85.0" layoutY="14.0">
                <image>
                   <Image url="@/images/5987462.png" />
